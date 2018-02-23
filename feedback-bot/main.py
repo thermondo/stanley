@@ -4,7 +4,8 @@ import secrets
 
 import redis as redis
 from flask import Flask, jsonify, request
-from slack import send_slack_message, get_team_members
+
+from .slack import send_slack_message, get_team_members
 
 SLACK_VERIFICATION_TOKEN = os.environ['SLACK_VERIFICATION_TOKEN']
 FEEDBACK_MEMBERS = os.environ.get('FEEDBACK_MEMBERS')
