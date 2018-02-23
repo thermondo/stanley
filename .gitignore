@@ -1,0 +1,94 @@
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+
+docs/_build
+docs/api
+_static
+_media
+celerybeat-schedule
+celerybeat-schedule.*
+celerybeat.pid
+
+.env
+
+venv
+venv3
+env
+
+# py.test cache
+.cache/
+.pytest_cache/
+
+# coverage
+.coverage.*
+
+# ctags tag-file
+tags
+.tags
+.tags*
+
+# debuging maps
+*.map
+
+# javascript and css files
+*.js
+*.css
+!**/src/**/*.js
+!**/specs/**/*.js
+!gulpfile.js
+!karma.config.js
+!karma-sinon-raven.js
+!tests.webpack.js
+!webpack.config.js
+!common/static/static_vendors/*.js
+!common/static/static_vendors/*.css
+
+# npm, bower and vendors modules
+node_modules
+bower_components
+common/static/vendors
+.nodeenv
+npm-debug.log
+
+# Makefile
+.last_migration
+
+# OS X
+.DS_Store
+
+# Bower
+common/static/css/thermondo-ci/
