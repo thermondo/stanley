@@ -1,8 +1,8 @@
 import os
+
 from slackclient import SlackClient
 
 SLACK_API_TOKEN = os.environ['SLACK_API_TOKEN']
-FEEDBACK_BOT_NAME = os.environ.get('FEEDBACK_BOT_NAME', 'dad')
 
 
 def slack_api():
@@ -18,9 +18,10 @@ def get_team_members():
 
 def send_slack_message(channel, message):
     sc = slack_api()
-    return sc.api_call(
+    response = sc.api_call(
         'chat.postMessage',
         channel=channel,
         text=message,
-        username=FEEDBACK_BOT_NAME
+        as_user=True,
     )
+    return response
