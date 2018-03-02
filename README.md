@@ -1,6 +1,6 @@
 # Stanley
 
-![Stanley](https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr06/2013/4/28/19/anigif_enhanced-buzz-4627-1367192053-4.gif?downsize=715:*&output-format=auto&output-quality=auto)
+![Stanley](https://camo.githubusercontent.com/10a960a0a1f2b2373d970140ed26749330ab67d8/687474703a2f2f69312e7974696d672e636f6d2f76692f394548394b4f744e4c35452f6d617872657364656661756c742e6a7067)
 
 A secret Santa Slack bot for positive feedback.
 
