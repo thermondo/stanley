@@ -1,0 +1,18 @@
+language: python
+sudo: false
+branches:
+  only:
+  - master
+cache:
+- pip
+- apt
+python:
+- '3.6'
+services:
+- redis-server
+install:
+- pip install -U pipenv
+- pipenv install --dev
+script:
+- pipenv run coverage run --source=feedback_bot -m 'pytest'
+after_success: codecov
