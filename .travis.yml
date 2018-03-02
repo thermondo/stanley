@@ -1,5 +1,8 @@
 language: python
 sudo: false
+branches:
+  only:
+  - master
 cache:
 - pip
 - apt
