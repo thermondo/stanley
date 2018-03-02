@@ -1,0 +1,20 @@
+language: python
+sudo: false
+cache:
+- pip
+- apt
+python:
+- '3.6'
+addons:
+  apt:
+    packages:
+    - python3-enchant
+services:
+- redis-server
+install:
+- pip install -U codecov
+- pipenv install --dev
+script:
+- pipenv run pytest
+after_success:
+- codecov
