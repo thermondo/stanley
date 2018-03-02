@@ -10,12 +10,9 @@ python:
 - '3.6'
 services:
 - redis-server
-env:
-  global:
-    secure: FH9aj/F4r2GXbl4DsF2b65uU/P+RPwZDG+pFWqKFw3qqGMc+sjzxxMhH7b+TbFvc6oJNTPnG4xBI/4GI6xbscDCsNos4WFc8fgcHpEx1x+pSfobN6rjJ8kJiXV2Hag2FVEb/YCUe3GTYUqYViMAnbWUrJ5SkEX9B4vy3DaQy0VioMzOkhqyRJLpAhM4dnpEXFdc/oz/u0WKimGW9Xey+/3aBsszsQmP6nvEU6azfXpJEoaEkZEAlA0styKlvV/1vtYTsbq0is60lVdZhnvslWW+nlYC2J1GoExIu0bO1vKSYkIslO0x3sx+pLszfaeeCtzoCF1rL/eh3ws+f2hyU2Ku30rCA02CPf+GOqZJkhAYNXXAkeq0bZqAsE9FWOUORMWiTEjjPMawc1x0MY/mXlsVkqStkuXwd2689DjZJFrZIdqlykCSPM7dPgXbTmQ0r0Py8PH2vrmwna9KgOJyOyOa462eD8O9iFN4lqhdSjxBuTP6J4Ud425K0VE2GahpAvIfx2oH5MCC6sVmMffTr2PoRYeBYputL+72qpR2yOGUYlR6z3g7uWdZkVgFaoeXOFEB0CRowSHhkRC1zFgopFae0bfC+HYY2+Cuz4Ep0uMxUb4VW+g1C0prIxKVUdbjCJ0u7YEREcoehvjJInJ4f2cEAh2lrSuyQWBTtcoFMpYo=
 install:
 - pip install -U pipenv
 - pipenv install --dev
 script:
 - pipenv run pytest
-after_success: codecov --token=$CODECOV_TOKEN
+after_success: codecov
