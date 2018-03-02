@@ -5,7 +5,7 @@
   "keywords": [
     "feedback"
   ],
-  "repository": "https://github.com/Thermondo/threesixty",
+  "repository": "https://github.com/Thermondo/stanley",
   "success_url": "/",
   "env": {
     "SECRET_KEY": {
