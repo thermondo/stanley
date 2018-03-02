@@ -1,0 +1,35 @@
+{
+  "name": "Stanley",
+  "description": "Secret Santa slack bot for positive feedback.",
+  "logo": "https://avatars1.githubusercontent.com/u/2737160",
+  "keywords": [
+    "feedback"
+  ],
+  "repository": "https://github.com/Thermondo/threesixty",
+  "success_url": "/",
+  "env": {
+    "SECRET_KEY": {
+      "description": "Secret key for Django app.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standard-1X"
+    }
+  },
+  "addons": [
+    "heroku-redis",
+    "scheduler"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

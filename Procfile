@@ -1,1 +1,1 @@
-web: waitress-serve --port=${PORT:-5000} --threads=${WAITRESS_THREADS:-4} --backlog=${WAITRESS_BACKLOG:-1024} --channel-timeout=${WAITRESS_CHANNEL_TIMEOUT:-120} --cleanup-interval=${WAITRESS_CLEANUP_INTERVAL:-30} feedback_bot.main:app
+web: waitress-serve --port=${PORT:-5000} --threads=${WEB_CONCURRENCY:-4} feedback_bot.main:app
