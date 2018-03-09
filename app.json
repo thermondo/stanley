@@ -8,10 +8,6 @@
   "repository": "https://github.com/Thermondo/stanley",
   "success_url": "/",
   "env": {
-    "SECRET_KEY": {
-      "description": "Secret key for Django app.",
-      "generator": "secret"
-    },
     "WEB_CONCURRENCY": {
       "description": "The number of processes to run.",
       "value": "5"
