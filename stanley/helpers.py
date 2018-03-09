@@ -1,14 +1,15 @@
 import secrets
 
 from stanley.redis import redis_storage
-from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_SEND_FEEDBACK
+from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_SEND_FEEDBACK, REDIS_KEY_RECEIVE_FEEDBACK
 from stanley.slack import get_team_members, send_slack_message
 
 
 def request_feedback():
     """Ask random user to give a feedback for another random user."""
     members = get_filtered_member()
-    sender, receiver = get_sender_receiver(members)
+    sender = get_sender(members)
+    receiver = get_receiver(members, sender)
 
     # set sender, receiver pair in the storage
     redis_storage.set(sender[0], receiver[0])
@@ -24,7 +25,7 @@ def get_filtered_member():
     return members
 
 
-def get_sender_receiver(members):
+def get_sender(members):
     # list of user that send a feedback already
     sent_already = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
 
@@ -38,12 +39,28 @@ def get_sender_receiver(members):
     can_send = [member for member in members if member[0] not in sent_already]
     random_sender = secrets.choice(can_send)
     # put the picked sender as key to list so we don't bother him until
-    # everyone else was asked to provide a feedback
+    # everyone else was asked to provide feedback
     redis_storage.sadd(REDIS_KEY_SEND_FEEDBACK, random_sender[0])
 
-    # figure out to who we can send the feedback, basically just not to
-    # the person we picked to give a feedback
-    can_receive = [member for member in members if member is not random_sender]
-    random_receiver = secrets.choice(can_receive)
+    return random_sender
 
-    return random_sender, random_receiver
+
+def get_receiver(members, sender):
+    received_aready = redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)
+    # subtract the list of people that already have received feedback
+    can_receive = [member for member in members if member[0] not in received_aready]
+    # also remove the person that is the sender
+    can_receive = [member for member in members if member is not sender]
+
+    # if the size of the list is zero, everyone received a feedback and
+    # we can start again
+    if len(can_receive) == 0:
+        redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+        can_receive = [member for member in members if member is not sender]
+
+    random_receiver = secrets.choice(can_receive)
+    # put the picked receiver as key to list so we don't bother him until
+    # everyone else received a feedback
+    redis_storage.sadd(REDIS_KEY_RECEIVE_FEEDBACK,  random_receiver[0])
+
+    return random_receiver
