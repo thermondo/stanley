@@ -4,6 +4,7 @@ import secrets
 
 import redis as redis
 from flask import Flask, jsonify, request
+from raven.contrib.flask import Sentry
 
 from .slack import get_team_members, send_slack_message
 
@@ -19,6 +20,7 @@ redis_storage = redis.from_url(
     charset='utf-8',
     decode_responses=True
 )
+sentry = Sentry(app, dsn=os.environ.get('SENTRY_DSN'))
 
 
 @app.route('/')
