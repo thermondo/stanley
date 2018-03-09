@@ -1,7 +1,7 @@
 import secrets
 
 from stanley.redis import redis_storage
-from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_SEND_FEEDBACK, REDIS_KEY_RECEIVE_FEEDBACK
+from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 from stanley.slack import get_team_members, send_slack_message
 
 
@@ -39,7 +39,7 @@ def get_sender(members):
     can_send = [member for member in members if member[0] not in sent_already]
     random_sender = secrets.choice(can_send)
     # put the picked sender as key to list so we don't bother him until
-    # everyone else was asked to provide feedback
+    # everyone else was asked to provide a feedback
     redis_storage.sadd(REDIS_KEY_SEND_FEEDBACK, random_sender[0])
 
     return random_sender
@@ -50,7 +50,7 @@ def get_receiver(members, sender):
     # subtract the list of people that already have received feedback
     can_receive = [member for member in members if member[0] not in received_aready]
     # also remove the person that is the sender
-    can_receive = [member for member in members if member is not sender]
+    can_receive = [member for member in can_receive if member is not sender]
 
     # if the size of the list is zero, everyone received a feedback and
     # we can start again
