@@ -11,6 +11,7 @@ redis = "*"
 slackclient = "*"
 flask = "*"
 raven = {extras = ["flask"]}
+waitress = "*"
 
 
 [dev-packages]
