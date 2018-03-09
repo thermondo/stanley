@@ -25,7 +25,8 @@
   },
   "addons": [
     "heroku-redis",
-    "scheduler"
+    "scheduler",
+    "sentry:f1"
   ],
   "buildpacks": [
     {

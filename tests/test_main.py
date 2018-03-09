@@ -1,5 +1,5 @@
-from stanley.main import (REDIS_KEY_SEND_FEEDBACK, get_sender_receiver,
-                          redis_storage)
+from stanley.app import get_sender_receiver, redis_storage
+from stanley.settings import REDIS_KEY_SEND_FEEDBACK
 
 
 def test_get_sender_receiver(members):
