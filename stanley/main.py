@@ -7,7 +7,7 @@ from flask import Flask, jsonify, request
 
 from .slack import get_team_members, send_slack_message
 
-SLACK_VERIFICATION_TOKEN = os.environ['SLACK_VERIFICATION_TOKEN']
+SLACK_VERIFICATION_TOKEN = os.environ.get('SLACK_VERIFICATION_TOKEN')
 FEEDBACK_MEMBERS = os.environ.get('FEEDBACK_MEMBERS')
 # redis key for list of person that already provided feedback
 REDIS_KEY_SEND_FEEDBACK = 'SEND_FEEDBACK'
