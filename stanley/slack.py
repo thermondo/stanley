@@ -2,7 +2,7 @@ import os
 
 from slackclient import SlackClient
 
-SLACK_API_TOKEN = os.environ['SLACK_API_TOKEN']
+SLACK_API_TOKEN = os.environ.get('SLACK_API_TOKEN')
 
 
 def slack_api():
