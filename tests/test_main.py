@@ -1,6 +1,6 @@
-from stanley.helpers import get_sender, get_receiver
+from stanley.helpers import get_receiver, get_sender
 from stanley.redis import redis_storage
-from stanley.settings import REDIS_KEY_SEND_FEEDBACK, REDIS_KEY_RECEIVE_FEEDBACK
+from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 
 
 def test_get_sender(members):
@@ -71,7 +71,7 @@ def test_get_receiver_impossible(members):
 
     # since sebastian is the sender, we expect that amureki is the receiver
     assert amureki[0] in saved_receiver
-    # sebastian shouln't have received a feedback yet
+    # sebastian should not have received a feedback yet
     assert sebastian[0] not in saved_receiver
     assert receiver, amureki
 

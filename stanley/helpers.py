@@ -21,7 +21,7 @@ def get_filtered_member():
     members = get_team_members()
     if FEEDBACK_MEMBERS:
         # if we have variable set, ignore other people
-        members = [member for member in members if member[1] in FEEDBACK_MEMBERS]
+        members = [m for m in members if m[1] in FEEDBACK_MEMBERS]
     return members
 
 
@@ -36,7 +36,7 @@ def get_sender(members):
         sent_already = []
 
     # subtract the list of people that already have send from the member
-    can_send = [member for member in members if member[0] not in sent_already]
+    can_send = [m for m in members if m[0] not in sent_already]
     random_sender = secrets.choice(can_send)
     # put the picked sender as key to list so we don't bother him until
     # everyone else was asked to provide a feedback
@@ -46,17 +46,15 @@ def get_sender(members):
 
 
 def get_receiver(members, sender):
-    received_aready = redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)
-    # subtract the list of people that already have received feedback
-    can_receive = [member for member in members if member[0] not in received_aready]
+    # subtract the list of people that already have received a feedback and
     # also remove the person that is the sender
-    can_receive = [member for member in can_receive if member is not sender]
+    received_already = redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)
+    can_receive = [m for m in members if m[0] not in received_already and m is not sender]
 
-    # if the size of the list is zero, everyone received a feedback and
-    # we can start again
+    # if the size of the list is zero, everyone received a feedback and we can start again
     if len(can_receive) == 0:
         redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
-        can_receive = [member for member in members if member is not sender]
+        can_receive = [m for m in members if m is not sender]
 
     random_receiver = secrets.choice(can_receive)
     # put the picked receiver as key to list so we don't bother him until
