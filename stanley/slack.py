@@ -10,7 +10,7 @@ def slack_api():
 
 
 def get_team_members():
-    """Returns user list in format (USER_ID, USER_NAME)."""
+    """Return user list in format (USER_ID, USER_NAME)."""
     sc = slack_api()
     members = sc.api_call('users.list').get('members')
     return [(member.get('id'), member.get('name')) for member in members]
