@@ -2,7 +2,10 @@ import json
 
 from flask import jsonify, request
 
-from stanley.app import SLACK_VERIFICATION_TOKEN, app, redis_storage, request_feedback_command
+from stanley.app import app
+from stanley.helpers import request_feedback
+from stanley.redis import redis_storage
+from stanley.settings import SLACK_VERIFICATION_TOKEN
 from stanley.slack import get_team_members, send_slack_message
 
 
@@ -19,8 +22,8 @@ def team():
 
 @app.route('/ask')
 def ask():
-    request_feedback_command()
-    return 'Hello World!', 200
+    request_feedback()
+    return 'Request sent!', 200
 
 
 @app.route('/forward-feedback', methods=['POST'])

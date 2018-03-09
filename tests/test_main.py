@@ -1,4 +1,5 @@
-from stanley.app import get_sender_receiver, redis_storage
+from stanley.helpers import get_sender_receiver
+from stanley.redis import redis_storage
 from stanley.settings import REDIS_KEY_SEND_FEEDBACK
 
 
