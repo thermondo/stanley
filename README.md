@@ -39,3 +39,26 @@ you have to set the deployed app url into 'Requests URL' and verify
 Next 'Subscribe to Bot Events' add 'message.im'
 
 Now go to your app and have fun!
+
+
+## Helpful management commands
+
+### Request team members
+
+To be able to see team members internal usernames (used in `FEEDBACK_MEMBERS` variable), you can run
+
+```bash
+FLASK_APP=stanley/app.py flask team_command
+```
+
+It will give you the list of Slack team members with their IDs.
+
+### Request a feedback
+
+To ask for a feedback, just run
+
+```bash
+FLASK_APP=stanley/app.py flask request_feedback_command
+```
+
+This will ask a random person to provide a feedback to another random person.
