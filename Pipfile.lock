@@ -313,9 +313,9 @@
         },
         "nodeenv": {
             "hashes": [
-                "sha256:98835dab727f94a713eacc7234e3db6777a55cafb60f391485011899e5c818df"
+                "sha256:dd0a34001090ff042cfdb4b0c8d6a6f7ec9baa49733f00b695bb8a8b4700ba6c"
             ],
-            "version": "==1.2.0"
+            "version": "==1.3.0"
         },
         "pluggy": {
             "hashes": [
