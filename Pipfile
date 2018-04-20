@@ -1,24 +1,18 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 redis = "*"
 slackclient = "*"
 flask = "*"
 raven = {extras = ["flask"]}
 waitress = "*"
 
-
 [dev-packages]
-
 redis = "*"
 slackclient = "*"
-pytest = "*"
 codecov = "*"
 coverage = "*"
 pre-commit = "*"
@@ -26,3 +20,4 @@ pycodestyle = "*"
 pydocstyle = "*"
 isort = "*"
 pylint = "*"
+pytest = "*"
