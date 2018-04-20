@@ -153,10 +153,10 @@
     "develop": {
         "aspy.yaml": {
             "hashes": [
-                "sha256:be70cc0ccd1ee1d30f589f2403792eb2ffa7546470af0a17179541b13d8374df",
-                "sha256:6215f44900ff65f27dbd00a36b06a7926276436ed377320cfd4febd69bbd4a94"
+                "sha256:c959530fab398e2391516bc8d5146489f9273b07d87dd8ba5e8b73406f7cc1fa",
+                "sha256:da95110d120a9168c9f43601b9cb732f006d8f193ee2c9b402c823026e4a9387"
             ],
-            "version": "==1.0.0"
+            "version": "==1.1.0"
         },
         "astroid": {
             "hashes": [
