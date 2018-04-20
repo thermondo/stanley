@@ -174,10 +174,10 @@
         },
         "cached-property": {
             "hashes": [
-                "sha256:6e6935ec62567fbcbc346fad84fcea9bc77e3547b7267e62bc5b7ed8e5438ae8",
-                "sha256:a2fa0f89dd422f7e5dd992a4a3e0ce209d5d1e47a4db28fd0a7b5273ec8da3f0"
+                "sha256:67acb3ee8234245e8aea3784a492272239d9c4b487eba2fdcce9d75460d34520",
+                "sha256:bf093e640b7294303c7cc7ba3212f00b7a07d0416c1d923465995c9ef860a139"
             ],
-            "version": "==1.4.0"
+            "version": "==1.4.2"
         },
         "certifi": {
             "hashes": [
