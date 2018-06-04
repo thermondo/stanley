@@ -11,10 +11,15 @@ def request_feedback():
     sender = get_sender(members)
     receiver = get_receiver(members, sender)
 
-    # set sender, receiver pair in the storage
-    redis_storage.set(sender[0], receiver[0])
     message = 'Hey, tell me something nice about @{}'.format(receiver[1])
-    send_slack_message(channel='@{}'.format(sender[0]), message=message)
+    response = send_slack_message(channel='@{}'.format(sender[0]), message=message)
+
+    if response['ok']:
+        # set sender, receiver pair in the storage
+        redis_storage.set(sender[0], receiver[0])
+    else:
+        from .app import sentry
+        sentry.captureMessage("Couldn't send slack message. Response: {}".format(response))
 
 
 def get_filtered_member():
