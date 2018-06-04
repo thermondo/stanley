@@ -17,6 +17,9 @@ def request_feedback():
     if response['ok']:
         # set sender, receiver pair in the storage
         redis_storage.set(sender[0], receiver[0])
+    else:
+        from .app import sentry
+        sentry.captureMessage("Couldn't send slack message. Response: {}".format(response))
 
 
 def get_filtered_member():
