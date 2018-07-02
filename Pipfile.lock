@@ -342,10 +342,10 @@
         },
         "pre-commit": {
             "hashes": [
-                "sha256:8269ab8b9ef662b5ebc2997140b10b807fea54934ee21940855da583412aca21",
-                "sha256:b66afd5336919a09f503dd279413dbc0d079a9323bf738c749e37124d823cca2"
+                "sha256:9807f29320547a8a13163c1977f6765e488a9349a01431ff4fbd196ff287b51c",
+                "sha256:2d57dd6b0c117ef8363233f256de8a3f26ee1c6e05ed96f9e2d9135ca5467d90"
             ],
-            "version": "==1.10.2"
+            "version": "==1.10.3"
         },
         "py": {
             "hashes": [
