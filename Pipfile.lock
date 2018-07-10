@@ -257,10 +257,10 @@
         },
         "identify": {
             "hashes": [
-                "sha256:31f4ddf22c4caba8737b9d5782affd6792ccc39faf71c8ffb6823294f78ce78e",
-                "sha256:f5deaa62227a1f236e7dbdd43320cf9bee8c6f6fa440ae081dce1706fce346ed"
+                "sha256:8689c02d2e5d07b57b3313d9b63b4bce23640456dcd2edb3f79e7e3b00b17d5b",
+                "sha256:f730cc03f49d20a236b29abe1fc6cfa23131202e1e01120b5110d7a1c5064a3f"
             ],
-            "version": "==1.1.1"
+            "version": "==1.1.2"
         },
         "idna": {
             "hashes": [
