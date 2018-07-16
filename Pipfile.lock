@@ -160,10 +160,10 @@
         },
         "astroid": {
             "hashes": [
-                "sha256:0ef2bf9f07c3150929b25e8e61b5198c27b0dca195e156f0e4d5bdd89185ca1a",
-                "sha256:fc9b582dba0366e63540982c3944a9230cbc6f303641c51483fa547dcc22393a"
+                "sha256:8704779744963d56a2625ec2949eb150bd499fc099510161ddbb2b64e2d98138",
+                "sha256:add3fd690e7c1fe92436d17be461feeaa173e6f33e0789734310334da0f30027"
             ],
-            "version": "==1.6.5"
+            "version": "==2.0"
         },
         "atomicwrites": {
             "hashes": [
