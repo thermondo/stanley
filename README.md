@@ -48,7 +48,7 @@ Now go to your app and have fun!
 To be able to see team members internal usernames (used in `FEEDBACK_MEMBERS` variable), you can run
 
 ```bash
-FLASK_APP=stanley/app.py flask team_command
+FLASK_APP=stanley/app.py flask team-command
 ```
 
 It will give you the list of Slack team members with their IDs.
@@ -58,7 +58,7 @@ It will give you the list of Slack team members with their IDs.
 To ask for a feedback, just run
 
 ```bash
-FLASK_APP=stanley/app.py flask request_feedback_command
+FLASK_APP=stanley/app.py flask request-feedback-command
 ```
 
 This will ask a random person to provide a feedback to another random person.
