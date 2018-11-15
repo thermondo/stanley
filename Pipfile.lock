@@ -117,11 +117,10 @@
         },
         "redis": {
             "hashes": [
-                "sha256:8a1900a9f2a0a44ecf6e8b5eb3e967a9909dfed219ad66df094f27f7d6f330fb",
-                "sha256:a22ca993cea2962dbb588f9f30d0015ac4afcc45bee27d3978c0dbe9e97c6c0f"
+                "sha256:abfbc9a18e9388f3de53d2ae90b174669d50e289fef90850177e63af902ea992",
+                "sha256:03b1b3d5c360091760666a2865ca60fcfbcfc5b54d0c4df21728e94c96caa7cb"
             ],
-            "index": "pypi",
-            "version": "==2.10.6"
+            "version": "==3.0.0.post1"
         },
         "requests": {
             "hashes": [
@@ -450,11 +449,10 @@
         },
         "redis": {
             "hashes": [
-                "sha256:8a1900a9f2a0a44ecf6e8b5eb3e967a9909dfed219ad66df094f27f7d6f330fb",
-                "sha256:a22ca993cea2962dbb588f9f30d0015ac4afcc45bee27d3978c0dbe9e97c6c0f"
+                "sha256:abfbc9a18e9388f3de53d2ae90b174669d50e289fef90850177e63af902ea992",
+                "sha256:03b1b3d5c360091760666a2865ca60fcfbcfc5b54d0c4df21728e94c96caa7cb"
             ],
-            "index": "pypi",
-            "version": "==2.10.6"
+            "version": "==3.0.0.post1"
         },
         "requests": {
             "hashes": [
