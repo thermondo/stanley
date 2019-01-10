@@ -387,11 +387,10 @@
         },
         "pre-commit": {
             "hashes": [
-                "sha256:7542bd8ae1c58745175ea0a9295964ee82a10f7e18c4344f5e4c02bd85d02561",
-                "sha256:87f687da6a2651d5067cfec95b854b004e95b70143cbf2369604bb3acbce25ec"
+                "sha256:ead20111ddbca1ca50c6547c2a7f5df0e5b6d22e85e4317b5bdc93ad8037dc58",
+                "sha256:4bc305791d8c26e6f6b38e85c29426cc5d8cd24db0ce84277d9b3d0a0bda2177"
             ],
-            "index": "pypi",
-            "version": "==1.12.0"
+            "version": "==1.14.1"
         },
         "py": {
             "hashes": [
