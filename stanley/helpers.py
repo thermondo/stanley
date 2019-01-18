@@ -34,8 +34,8 @@ def get_sender(members):
     # list of user that send a feedback already
     sent_already = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
 
-    # if the size of both list is the same, it means that everyone already
-    # gave feedback and we can start from the beginning
+    # if the size of both list is the same, it means that everyone already was
+    # asked to give feedback and we can start from the beginning
     if len(sent_already) >= len(members):
         redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
         sent_already = []
@@ -58,7 +58,8 @@ def get_receiver(members, sender):
 
     # if the size of the list is zero, everyone received a feedback and we can start again
     if len(can_receive) == 0:
-        redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+        # FIXME the last person will never get a feedback from this round
+        redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
         can_receive = [m for m in members if m is not sender]
 
     random_receiver = secrets.choice(can_receive)
