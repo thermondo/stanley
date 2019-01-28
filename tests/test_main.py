@@ -4,6 +4,8 @@ from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 
 
 def test_get_sender(members):
+    assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == set()
+
     sender = get_sender(members)
 
     saved_sender = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
@@ -13,7 +15,22 @@ def test_get_sender(members):
     redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
 
 
-def test_get_sender_when_already_run(members):
+def test_get_sender_when_everyone_was_asked(members):
+    members_len = len(members)
+    [get_sender(members) for _ in range(members_len)]
+
+    assert len(redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)) == members_len
+
+    get_sender(members)
+
+    assert len(redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)) == 1
+
+    # cleanup used key
+    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+
+
+def test_get_sender_when_someone_sent_feedback_already(two_members):
+    members = two_members
     amureki_id = members[0][0]
     sebastian_id = members[1][0]
 
@@ -35,20 +52,35 @@ def test_get_sender_when_already_run(members):
 
 
 def test_get_receiver(members):
-    amureki = members[0]
     sebastian = members[1]
 
-    # say sebastian is the sender so we expect amureki
-    # to be the receiver
     receiver = get_receiver(members, sebastian)
 
-    assert receiver, amureki
+    assert receiver != sebastian
 
     # cleanup used key
     redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
 
 
-def test_get_receiver_impossible(members):
+def test_everybody_has_received_feedback(members):
+    redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
+    sebastian = members[1]
+
+    get_receiver(members, sebastian)
+    get_receiver(members, sebastian)
+
+    assert len(redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)) == 2
+
+    get_receiver(members, sebastian)
+
+    # when all members received feedback, reset the queue
+    assert len(redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)) == 1
+
+    # cleanup used key
+    redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
+
+
+def test_get_receiver_impossible(two_members):
     """Handle edge case.
 
     It is possible that the last person that is left to get feedback
@@ -56,6 +88,7 @@ def test_get_receiver_impossible(members):
     case and return a proper receiver.
 
     """
+    members = two_members
     amureki = members[0]
     sebastian = members[1]
 

@@ -1,8 +1,6 @@
-import os
-
 from slackclient import SlackClient
 
-SLACK_API_TOKEN = os.environ.get('SLACK_API_TOKEN')
+from stanley.settings import SLACK_API_TOKEN
 
 
 def slack_api():
