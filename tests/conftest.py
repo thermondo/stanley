@@ -2,6 +2,7 @@ import pytest
 
 from stanley.redis import redis_storage
 from stanley.settings import REDIS_KEY_SEND_FEEDBACK
+from stanley.slack import slack_client
 
 from .utils import gen_string
 
@@ -15,11 +16,11 @@ def two_members():
     members = [
         [
             amureki_id,
-            "amureki"
+            'amureki'
         ],
         [
             sebastian_id,
-            "sebastiankapunkt"
+            'sebastiankapunkt'
         ]
     ]
 
@@ -36,15 +37,15 @@ def members():
     members = [
         [
             amureki_id,
-            "amureki"
+            'amureki'
         ],
         [
             sebastian_id,
-            "sebastiankapunkt"
+            'sebastiankapunkt'
         ],
         [
             anapaulagomes_id,
-            "anapaulagomes"
+            'anapaulagomes'
         ]
     ]
 
@@ -58,3 +59,18 @@ def redis_clean_up():
     yield
 
     redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+
+
+@pytest.fixture
+def slack_api_call_mock(monkeypatch):
+    def fake_api_call(endpoint):
+        return {
+            'ok': True,
+            'members': [
+                {'id': 'USLACKBOT', 'name': 'slackbot'},
+                {'id': 'UCRJYDGTU', 'name': 'ana.gomes'},
+                {'id': 'UCRPLKK2R', 'name': 'amureki'},
+                {'id': 'U9D632ZK3', 'name': 'sebastiankapunkt'},
+            ]
+        }
+    monkeypatch.setattr(slack_client, 'api_call', fake_api_call)
