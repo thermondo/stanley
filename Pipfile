@@ -5,14 +5,13 @@ name = "pypi"
 
 [packages]
 redis = "*"
-slackclient = "*"
 flask = "*"
 raven = {extras = ["flask"]}
 waitress = "*"
+slackclient = "*"
 
 [dev-packages]
 redis = "*"
-slackclient = "*"
 codecov = "*"
 coverage = "*"
 pre-commit = "*"
