@@ -1,6 +1,19 @@
-from stanley.helpers import get_receiver, get_sender
+import pytest
+
+from stanley.helpers import get_receiver, get_sender, get_filtered_member
 from stanley.redis import redis_storage
 from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
+
+
+@pytest.fixture
+def feedback_members_env():
+    import stanley
+    original_value = stanley.helpers.FEEDBACK_MEMBERS
+    stanley.helpers.FEEDBACK_MEMBERS = 'ana.gomes,slackbot'
+
+    yield
+
+    stanley.helpers.FEEDBACK_MEMBERS = original_value
 
 
 def test_get_sender(redis_clean_up, members):
@@ -92,3 +105,13 @@ def test_get_receiver_impossible(redis_clean_up, two_members):
     # sebastian should not have received a feedback yet
     assert sebastian[0] not in saved_receiver
     assert receiver, amureki
+
+
+def test_get_all_members_if_feedback_members_not_set(slack_api_call_mock):
+    assert len(get_filtered_member()) == 4
+
+
+def test_filter_according_to_feedback_members_variable(slack_api_call_mock, feedback_members_env):
+    filtered_members = get_filtered_member()
+
+    assert len(filtered_members) == 2

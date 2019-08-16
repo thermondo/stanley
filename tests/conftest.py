@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 from stanley.redis import redis_storage
@@ -68,9 +70,15 @@ def slack_api_call_mock(monkeypatch):
             'ok': True,
             'members': [
                 {'id': 'USLACKBOT', 'name': 'slackbot'},
-                {'id': 'UCRJYDGTU', 'name': 'ana.gomes'},
-                {'id': 'UCRPLKK2R', 'name': 'amureki'},
-                {'id': 'U9D632ZK3', 'name': 'sebastiankapunkt'},
+                {'id': 'UANA', 'name': 'ana.gomes'},
+                {'id': 'UAMUREKI', 'name': 'amureki'},
+                {'id': 'USEBASTIAN', 'name': 'sebastiankapunkt'},
             ]
         }
     monkeypatch.setattr(slack_client, 'api_call', fake_api_call)
+
+
+@pytest.fixture
+def slack_post_message_mock():
+    with patch('stanley.slack.slack.WebClient.chat_postMessage') as mock:
+        yield mock
