@@ -1,23 +1,19 @@
-from slackclient import SlackClient
+import slack
 
 from stanley.settings import SLACK_API_TOKEN
 
 
-def slack_api():
-    return SlackClient(SLACK_API_TOKEN)
+slack_client = slack.WebClient(SLACK_API_TOKEN, timeout=30)
 
 
 def get_team_members():
     """Return user list in format (USER_ID, USER_NAME)."""
-    sc = slack_api()
-    members = sc.api_call('users.list').get('members')
+    members = slack_client.api_call('users.list').get('members')
     return [(member.get('id'), member.get('name')) for member in members]
 
 
 def send_slack_message(channel, message):
-    sc = slack_api()
-    response = sc.api_call(
-        'chat.postMessage',
+    response = slack_client.chat_postMessage(
         channel=channel,
         text=message,
         as_user=True,
