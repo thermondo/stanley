@@ -1,5 +1,8 @@
 import pytest
 
+from stanley.redis import redis_storage
+from stanley.settings import REDIS_KEY_SEND_FEEDBACK
+
 from .utils import gen_string
 
 
@@ -46,3 +49,12 @@ def members():
     ]
 
     return members
+
+
+@pytest.fixture
+def redis_clean_up():
+    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+
+    yield
+
+    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)

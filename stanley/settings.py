@@ -1,6 +1,5 @@
 import os
 
-
 SLACK_API_TOKEN = os.environ.get('SLACK_API_TOKEN')
 SLACK_VERIFICATION_TOKEN = os.environ.get('SLACK_VERIFICATION_TOKEN')
 FEEDBACK_MEMBERS = os.environ.get('FEEDBACK_MEMBERS')
