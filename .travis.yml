@@ -7,7 +7,7 @@ cache:
 - pip
 - apt
 python:
-- '3.6'
+- '3.8-dev'
 services:
 - redis-server
 install:
