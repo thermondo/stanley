@@ -1,9 +1,9 @@
-from stanley.helpers import get_receiver, get_sender
+from stanley.helpers import get_filtered_member, get_receiver, get_sender
 from stanley.redis import redis_storage
 from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 
 
-def test_get_sender(members):
+def test_get_sender(redis_clean_up, members):
     assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == set()
 
     sender = get_sender(members)
@@ -11,11 +11,8 @@ def test_get_sender(members):
     saved_sender = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
     assert sender[0] in saved_sender
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
 
-
-def test_get_sender_when_everyone_was_asked(members):
+def test_get_sender_when_everyone_was_asked(redis_clean_up, members):
     members_len = len(members)
     [get_sender(members) for _ in range(members_len)]
 
@@ -25,11 +22,8 @@ def test_get_sender_when_everyone_was_asked(members):
 
     assert len(redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)) == 1
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
 
-
-def test_get_sender_when_someone_sent_feedback_already(two_members):
+def test_get_sender_when_someone_sent_feedback_already(redis_clean_up, two_members):
     members = two_members
     amureki_id = members[0][0]
     sebastian_id = members[1][0]
@@ -47,22 +41,16 @@ def test_get_sender_when_someone_sent_feedback_already(two_members):
     assert amureki_id in saved_sender
     assert sebastian_id in saved_sender
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
 
-
-def test_get_receiver(members):
+def test_get_receiver(redis_clean_up, members):
     sebastian = members[1]
 
     receiver = get_receiver(members, sebastian)
 
     assert receiver != sebastian
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
 
-
-def test_everybody_has_received_feedback(members):
+def test_everybody_has_received_feedback(redis_clean_up, members):
     redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
     sebastian = members[1]
 
@@ -76,11 +64,8 @@ def test_everybody_has_received_feedback(members):
     # when all members received feedback, reset the queue
     assert len(redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)) == 1
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
 
-
-def test_get_receiver_impossible(two_members):
+def test_get_receiver_impossible(redis_clean_up, two_members):
     """Handle edge case.
 
     It is possible that the last person that is left to get feedback
@@ -108,5 +93,18 @@ def test_get_receiver_impossible(two_members):
     assert sebastian[0] not in saved_receiver
     assert receiver, amureki
 
-    # cleanup used key
-    redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)
+
+def test_get_all_members_if_feedback_members_not_set(slack_api_call_mock):
+    assert len(get_filtered_member()) == 4
+
+
+def test_filter_according_to_feedback_members_variable(slack_api_call_mock):
+    import stanley
+    original_value = stanley.helpers.FEEDBACK_MEMBERS
+    stanley.helpers.FEEDBACK_MEMBERS = 'ana.gomes,slackbot'
+
+    filtered_members = get_filtered_member()
+
+    assert len(filtered_members) == 2
+
+    stanley.helpers.FEEDBACK_MEMBERS = original_value

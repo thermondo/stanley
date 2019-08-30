@@ -1,4 +1,10 @@
+from unittest.mock import patch
+
 import pytest
+
+from stanley.redis import redis_storage
+from stanley.settings import REDIS_KEY_SEND_FEEDBACK
+from stanley.slack import slack_client
 
 from .utils import gen_string
 
@@ -12,11 +18,11 @@ def two_members():
     members = [
         [
             amureki_id,
-            "amureki"
+            'amureki'
         ],
         [
             sebastian_id,
-            "sebastiankapunkt"
+            'sebastiankapunkt'
         ]
     ]
 
@@ -33,16 +39,44 @@ def members():
     members = [
         [
             amureki_id,
-            "amureki"
+            'amureki'
         ],
         [
             sebastian_id,
-            "sebastiankapunkt"
+            'sebastiankapunkt'
         ],
         [
             anapaulagomes_id,
-            "anapaulagomes"
+            'anapaulagomes'
         ]
     ]
 
     return members
+
+
+@pytest.fixture
+def redis_clean_up():
+    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+    yield
+    redis_storage.delete(REDIS_KEY_SEND_FEEDBACK)
+
+
+@pytest.fixture
+def slack_api_call_mock(monkeypatch):
+    def fake_api_call(endpoint):
+        return {
+            'ok': True,
+            'members': [
+                {'id': 'USLACKBOT', 'name': 'slackbot'},
+                {'id': 'UANA', 'name': 'ana.gomes'},
+                {'id': 'UAMUREKI', 'name': 'amureki'},
+                {'id': 'USEBASTIAN', 'name': 'sebastiankapunkt'},
+            ]
+        }
+    monkeypatch.setattr(slack_client, 'api_call', fake_api_call)
+
+
+@pytest.fixture
+def slack_post_message_mock():
+    with patch('stanley.slack.slack.WebClient.chat_postMessage') as mock:
+        yield mock
