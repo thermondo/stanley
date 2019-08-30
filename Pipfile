@@ -9,6 +9,7 @@ flask = "*"
 raven = {extras = ["flask"]}
 waitress = "*"
 slackclient = "*"
+idna-ssl = "*"
 
 [dev-packages]
 redis = "*"
