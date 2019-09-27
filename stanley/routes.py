@@ -1,4 +1,5 @@
 import json
+from typing import Tuple
 
 from flask import request
 
@@ -9,12 +10,12 @@ from stanley.slack import send_slack_message
 
 
 @app.route('/')
-def hello():
+def hello() -> Tuple[str, int]:
     return 'This is pretzel day!', 200
 
 
 @app.route('/forward-feedback', methods=['POST'])
-def forward_feedback():
+def forward_feedback() -> Tuple[str, int]:
     data = json.loads(request.data)
     challenge = data.get('challenge')
     if challenge:
