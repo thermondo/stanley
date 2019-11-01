@@ -1,6 +1,6 @@
 import click
 from flask import Flask
-from raven.contrib.flask import Sentry  # type: ignore
+from raven.contrib.flask import Sentry
 
 from stanley.helpers import request_feedback
 from stanley.settings import SENTRY_DSN

@@ -1,8 +1,8 @@
 from asyncio import Future
 from typing import List, Union
 
-import slack  # type: ignore
-from slack.web.slack_response import SlackResponse  # type: ignore
+import slack
+from slack.web.slack_response import SlackResponse
 
 from stanley.settings import SLACK_API_TOKEN
 

@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-import pytest  # type: ignore
+import pytest
 
 from stanley.redis import redis_storage
 from stanley.settings import REDIS_KEY_SEND_FEEDBACK
