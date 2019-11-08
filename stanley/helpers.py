@@ -1,11 +1,12 @@
 import secrets
+from typing import List, Tuple
 
 from stanley.redis import redis_storage
 from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 from stanley.slack import get_team_members, send_slack_message
 
 
-def request_feedback():
+def request_feedback() -> None:
     """Ask random user to give a feedback for another random user."""
     members = get_filtered_member()
     sender = get_sender(members)
@@ -14,7 +15,7 @@ def request_feedback():
     message = 'Hey, tell me something nice about @{}'.format(receiver[1])
     response = send_slack_message(channel='@{}'.format(sender[0]), message=message)
 
-    if response['ok']:
+    if response['ok']:  # type: ignore
         # set sender, receiver pair in the storage
         redis_storage.set(sender[0], receiver[0])
     else:
@@ -22,7 +23,7 @@ def request_feedback():
         sentry.captureMessage("Couldn't send slack message. Response: {}".format(response))
 
 
-def get_filtered_member():
+def get_filtered_member() -> List[tuple]:
     members = get_team_members()
     if FEEDBACK_MEMBERS:
         # if we have variable set, ignore other people
@@ -30,7 +31,7 @@ def get_filtered_member():
     return members
 
 
-def get_sender(members):
+def get_sender(members: List[tuple]) -> Tuple:
     # list of user that send a feedback already
     sent_already = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
 
@@ -50,7 +51,7 @@ def get_sender(members):
     return random_sender
 
 
-def get_receiver(members, sender):
+def get_receiver(members: List[tuple], sender: Tuple) -> Tuple:
     # subtract the list of people that already have received a feedback and
     # also remove the person that is the sender
     received_already = redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)

@@ -9,6 +9,7 @@ flask = "*"
 raven = {extras = ["flask"]}
 waitress = "*"
 slackclient = "*"
+typing-extensions = "*"
 
 [dev-packages]
 redis = "*"
@@ -20,3 +21,6 @@ pydocstyle = "*"
 isort = "*"
 pylint = "*"
 pytest = "*"
+pytest-mypy = "*"
+mypy = "*"
+typing-extensions = "*"

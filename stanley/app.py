@@ -14,12 +14,12 @@ assert stanley.routes  # nosec
 
 
 @app.cli.command()
-def request_feedback_command():
+def request_feedback_command() -> None:
     request_feedback()
 
 
 @app.cli.command()
-def team_command():
+def team_command() -> None:
     members = get_team_members()
     for member in members:
         click.echo(member)
