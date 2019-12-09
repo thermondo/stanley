@@ -170,11 +170,11 @@
         },
         "slackclient": {
             "hashes": [
-                "sha256:d63cb1d2866dee978f7e736a8693bb708adf9a36c1ce672b57b90709a1a9d0f8",
-                "sha256:dcb2d48a43fcafb9ddf65471d6c88a6a5e976d500474a507e8f1832e0046eaf8"
+                "sha256:ac18c01902d4cac0d50bbaf5d57f074da2843db9ef7915c922882c9f5824dd10",
+                "sha256:ca5c76b4cffd8ba4b30d5be0fec2d6756081d0790f23d7425073195634f26200"
             ],
             "index": "pypi",
-            "version": "==2.3.1"
+            "version": "==2.4.0"
         },
         "typing-extensions": {
             "hashes": [
