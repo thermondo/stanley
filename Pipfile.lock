@@ -454,11 +454,11 @@
         },
         "pydocstyle": {
             "hashes": [
-                "sha256:7f2b7e70c4e6951d0f2aff445b670a336a28c56c0a40275dc8620a93ac2140c3",
-                "sha256:d85eb88a0650756ea44d91917c1eb3a20903eeb163285774721a4807190fce24"
+                "sha256:4167fe954b8f27ebbbef2fbcf73c6e8ad1e7bb31488fce44a69fdfc4b0cd0fae",
+                "sha256:a0de36e549125d0a16a72a8c8c6c9ba267750656e72e466e994c222f1b6e92cb"
             ],
             "index": "pypi",
-            "version": "==5.0.0"
+            "version": "==5.0.1"
         },
         "pylint": {
             "hashes": [
