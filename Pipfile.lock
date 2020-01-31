@@ -89,10 +89,10 @@
         },
         "jinja2": {
             "hashes": [
-                "sha256:6e7a3c2934694d59ad334c93dd1b6c96699cf24c53fdb8ec848ac6b23e685734",
-                "sha256:d6609ae5ec3d56212ca7d802eda654eaf2310000816ce815361041465b108be4"
+                "sha256:93187ffbc7808079673ef52771baa950426fd664d3aad1d0fa3e95644360e250",
+                "sha256:b0eaf100007721b5c16c1fc1eecb87409464edc10469ddc9a22a27a99123be49"
             ],
-            "version": "==2.11.0"
+            "version": "==2.11.1"
         },
         "markupsafe": {
             "hashes": [
@@ -167,11 +167,11 @@
         },
         "redis": {
             "hashes": [
-                "sha256:3613daad9ce5951e426f460deddd5caf469e08a3af633e9578fc77d362becf62",
-                "sha256:8d0fc278d3f5e1249967cba2eb4a5632d19e45ce5c09442b8422d15ee2c22cc2"
+                "sha256:7595976eb0b4e1fc3ad5478f1fd44215a814ee184a7820de92726f559bdff9cd",
+                "sha256:e933bdb504c69cbd5bdf4e2bb819a99644a36731cef4c59aa637cebfd5ddd4f9"
             ],
             "index": "pypi",
-            "version": "==3.3.11"
+            "version": "==3.4.0"
         },
         "slackclient": {
             "hashes": [
@@ -384,7 +384,6 @@
                 "sha256:5dd8bcf33e5f9513ffa06d5ad33d78f31e1931ac9a18f33d37e77a180d393a7c",
                 "sha256:b1ddb932186d8a6ac451e1d95844b382f55e12686d51ca0c68b6f61f2ab7a507"
             ],
-            "index": "pypi",
             "version": "==8.2.0"
         },
         "mypy": {
@@ -514,11 +513,11 @@
         },
         "redis": {
             "hashes": [
-                "sha256:3613daad9ce5951e426f460deddd5caf469e08a3af633e9578fc77d362becf62",
-                "sha256:8d0fc278d3f5e1249967cba2eb4a5632d19e45ce5c09442b8422d15ee2c22cc2"
+                "sha256:7595976eb0b4e1fc3ad5478f1fd44215a814ee184a7820de92726f559bdff9cd",
+                "sha256:e933bdb504c69cbd5bdf4e2bb819a99644a36731cef4c59aa637cebfd5ddd4f9"
             ],
             "index": "pypi",
-            "version": "==3.3.11"
+            "version": "==3.4.0"
         },
         "requests": {
             "hashes": [
