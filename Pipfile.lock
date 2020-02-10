@@ -229,6 +229,13 @@
         }
     },
     "develop": {
+        "appdirs": {
+            "hashes": [
+                "sha256:9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92",
+                "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"
+            ],
+            "version": "==1.4.3"
+        },
         "aspy.yaml": {
             "hashes": [
                 "sha256:463372c043f70160a9ec950c3f1e4c3a82db5fca01d334b6bc89c7164d744bdc",
@@ -315,6 +322,13 @@
             ],
             "index": "pypi",
             "version": "==5.0.3"
+        },
+        "filelock": {
+            "hashes": [
+                "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59",
+                "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"
+            ],
+            "version": "==3.0.12"
         },
         "identify": {
             "hashes": [
@@ -592,10 +606,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:0d62c70883c0342d59c11d0ddac0d954d0431321a41ab20851facf2b222598f3",
-                "sha256:55059a7a676e4e19498f1aad09b8313a38fcc0cdbe4fdddc0e9b06946d21b4bb"
+                "sha256:65ac7fc1513b1d39de71cc12b7ee1d80b44fc5d9279fa9073dee4d0b037e63a4",
+                "sha256:c018fa2e8a19d88bd1742a4f7bb6db5c9b8dfd65a43c03115554ba9f0771c1ec"
             ],
-            "version": "==16.7.9"
+            "index": "pypi",
+            "version": "==20.0.0"
         },
         "wcwidth": {
             "hashes": [
@@ -615,7 +630,6 @@
                 "sha256:5c56e330306215cd3553342cfafc73dda2c60792384117893f3a83f8a1209f50",
                 "sha256:d65287feb793213ffe11c0f31b81602be31448f38aeb8ffc2eb286c4f6f6657e"
             ],
-            "index": "pypi",
             "version": "==2.2.0"
         }
     }
