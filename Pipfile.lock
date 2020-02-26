@@ -262,7 +262,6 @@
                 "sha256:1ccf53320421aeeb915275a196e23b3b8ae87dea8ac6698b1638001d4a486d53",
                 "sha256:c8e8f552ffcc6194f4e18dd4f68d9aef0c0d58ae7e7be8c82bee3c5e9edfa513"
             ],
-            "index": "pypi",
             "version": "==3.1.0"
         },
         "chardet": {
@@ -606,10 +605,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:531b142e300d405bb9faedad4adbeb82b4098b918e35209af2adef3129274aae",
-                "sha256:5dd42a9f56307542bddc446cfd10ef6576f11910366a07609fe8d0d88fa8fb7e"
+                "sha256:36cbdd40c67351e0a7f4dfb9a9c4000bbea6f236f9bb9c601c5eae1ac183ba3d",
+                "sha256:92e23178c60679f3a2f11136e39a286c43d6ee182ffa1e0f9c7b9683d57acb7c"
             ],
-            "version": "==20.0.5"
+            "index": "pypi",
+            "version": "==20.0.6"
         },
         "wcwidth": {
             "hashes": [
