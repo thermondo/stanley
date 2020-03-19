@@ -522,7 +522,6 @@
                 "sha256:cc8955cfbfc7a115fa81d85284ee61147059a753344bc51098f3ccd69b0d7e0c",
                 "sha256:d13155f591e6fcc1ec3b30685d50bf0711574e2c0dfffd7644babf8b5102ca1a"
             ],
-            "index": "pypi",
             "version": "==5.3.1"
         },
         "redis": {
@@ -606,10 +605,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:0a854711f2dcae9a644f105d36f5cc6814cd61db47de8c01b8f315d61214afe4",
-                "sha256:a7ac634372748fa4e63e956f8e6981442747fcb4a209876b34e1ff5018d3cfe3"
+                "sha256:d28ef00e313b22bc1d4712b4ae44b8abc9a11dcb137d0bc393c26532db0cb881",
+                "sha256:e5cf77b2db7d010f94a33b43fe2f390a0d0376b42530ef6fd1dd13af7355f003"
             ],
-            "version": "==20.0.11"
+            "index": "pypi",
+            "version": "==20.0.12"
         },
         "wcwidth": {
             "hashes": [
