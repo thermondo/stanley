@@ -6,10 +6,10 @@ name = "pypi"
 [packages]
 redis = "*"
 flask = "*"
-raven = {extras = ["flask"]}
 waitress = "*"
 slackclient = "*"
 typing-extensions = "*"
+sentry-sdk = {extras = ["flask"], version = "*"}
 
 [dev-packages]
 redis = "*"

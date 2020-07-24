@@ -1,6 +1,8 @@
 import secrets
 from typing import List, Tuple
 
+from sentry_sdk import capture_message
+
 from stanley.redis import redis_storage
 from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 from stanley.slack import get_team_members, send_slack_message
@@ -19,8 +21,7 @@ def request_feedback() -> None:
         # set sender, receiver pair in the storage
         redis_storage.set(sender[0], receiver[0])
     else:
-        from .app import sentry
-        sentry.captureMessage("Couldn't send slack message. Response: {}".format(response))
+        capture_message("Couldn't send slack message. Response: {}".format(response))
 
 
 def get_filtered_member() -> List[tuple]:
