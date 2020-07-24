@@ -1,13 +1,18 @@
 import click
+import sentry_sdk
 from flask import Flask
-from raven.contrib.flask import Sentry
+from sentry_sdk.integrations.flask import FlaskIntegration
 
 from stanley.helpers import request_feedback
 from stanley.settings import SENTRY_DSN
 from stanley.slack import get_team_members
 
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    integrations=[FlaskIntegration()]
+)
+
 app = Flask(__name__)
-sentry = Sentry(app, dsn=SENTRY_DSN)
 
 import stanley.routes  # NoQA # isort:skip # pylint: disable=unused-import
 assert stanley.routes  # nosec
