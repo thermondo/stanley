@@ -349,10 +349,11 @@
         },
         "identify": {
             "hashes": [
-                "sha256:110ed090fec6bce1aabe3c72d9258a9de82207adeaa5a05cd75c635880312f9a",
-                "sha256:ccd88716b890ecbe10920659450a635d2d25de499b9a638525a48b48261d989b"
+                "sha256:4c3646d765127b003d2bed8db1e125d68f5f83ad0cd85e21c908ef87a5e24be1",
+                "sha256:f9ea81ccbade4f12d5f3960522c508aabf31709a48efa4f6c6b700e0c7366ff2"
             ],
-            "version": "==1.4.25"
+            "index": "pypi",
+            "version": "==1.4.27"
         },
         "idna": {
             "hashes": [
