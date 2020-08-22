@@ -43,7 +43,6 @@
                 "sha256:0ef97238856430dcf9228e07f316aefc17e8939fc8507e18c6501b761ef1a42a",
                 "sha256:2867b7b9f8326499ab5b0e2d12801fa5c98842d2cbd22b35112ae04bf85b4dff"
             ],
-            "index": "pypi",
             "version": "==20.1.0"
         },
         "blinker": {
@@ -263,7 +262,6 @@
                 "sha256:0ef97238856430dcf9228e07f316aefc17e8939fc8507e18c6501b761ef1a42a",
                 "sha256:2867b7b9f8326499ab5b0e2d12801fa5c98842d2cbd22b35112ae04bf85b4dff"
             ],
-            "index": "pypi",
             "version": "==20.1.0"
         },
         "certifi": {
@@ -475,11 +473,11 @@
         },
         "pre-commit": {
             "hashes": [
-                "sha256:1657663fdd63a321a4a739915d7d03baedd555b25054449090f97bb0cb30a915",
-                "sha256:e8b1315c585052e729ab7e99dcca5698266bedce9067d21dc909c23e3ceed626"
+                "sha256:7bece167a451a9e43f225f80083b101c5d5811bbc387246bd00f8a41fd5e9c85",
+                "sha256:8b1cecd60b7c366c8ca3b37e67c165a1b59cfa913e9b42d390709585ece5af83"
             ],
             "index": "pypi",
-            "version": "==2.6.0"
+            "version": "==2.7.0"
         },
         "py": {
             "hashes": [
