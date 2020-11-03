@@ -402,11 +402,11 @@
         },
         "identify": {
             "hashes": [
-                "sha256:b505f7658afbddc11556de5ff9a5a52eed81b9a380f8ff77b7dd9781cfee6884",
-                "sha256:e3c822614168c9ac248f4258ffe43092debceb45e299a07b8f2fb168ba875605"
+                "sha256:77e34c6eb21f2d805e8d41140030fbc54e5f0502fae5c6c566173bf638313f74",
+                "sha256:fd6564cf079954c00b3a436c9f3bea74ddebf610310d94def10b4a10f11dc9eb"
             ],
             "index": "pypi",
-            "version": "==1.5.7"
+            "version": "==1.5.8"
         },
         "idna": {
             "hashes": [
