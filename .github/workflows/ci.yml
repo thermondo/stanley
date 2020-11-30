@@ -36,4 +36,4 @@ jobs:
         run: pipenv run coverage run --source=stanley -m 'pytest' --mypy
 
       - name: codecov
-        run: codecov --required
+        run: pipenv run codecov --required
