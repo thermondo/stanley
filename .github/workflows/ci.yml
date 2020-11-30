@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-18.04
+
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: installing pipenv
+        run: pip install pipenv
+
+      - name: Install dependecies
+        run: pipenv install --dev
+
+      - name: tests
+        run: pipenv run coverage run --source=stanley -m 'pytest' --mypy
+
+      - name: codecov
+        run: pipenv run codecov --required
