@@ -35,6 +35,5 @@ jobs:
       - name: tests
         run: pipenv run coverage run --source=stanley -m 'pytest' --mypy
 
-      - uses: codecov/codecov-action@v1
-        with:
-          fail_ci_if_error: true
+      - name: codecov
+        run: codecov --required
