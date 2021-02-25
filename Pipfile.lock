@@ -465,7 +465,7 @@
                 "sha256:24499ffde1b80be08284100393955842be4a59c7c16bbf2738aad0e464a8e0aa",
                 "sha256:c6af5dbf1126cd959c4a8d8efd61d4d3c83bddb0459a17e554284a077574b614"
             ],
-            "index": "pypi",
+            "markers": "python_version < '3.8'",
             "version": "==3.7.0"
         },
         "iniconfig": {
@@ -608,11 +608,11 @@
         },
         "pylint": {
             "hashes": [
-                "sha256:2e0c6749d809985e4f181c336a8f89b2b797340d8049160bf95f35a3f0ecf6fc",
-                "sha256:3ea3926700db399765db1faf53860f11e4e981a090646e9eacd01ca78e020579"
+                "sha256:81ce108f6342421169ea039ff1f528208c99d2e5a9c4ca95cfc5291be6dfd982",
+                "sha256:a251b238db462b71d25948f940568bb5b3ae0e37dbaa05e10523f54f83e6cc7e"
             ],
             "index": "pypi",
-            "version": "==2.7.0"
+            "version": "==2.7.1"
         },
         "pyparsing": {
             "hashes": [
