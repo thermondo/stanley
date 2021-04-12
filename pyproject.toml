@@ -1,9 +1,11 @@
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-name = "pypi"
+[tool.poetry]
+name = "stanley"
+version = "0.1.0"
+description = ""
+authors = []
 
-[packages]
+[tool.poetry.dependencies]
+python = "3.7.9"
 redis = "*"
 flask = "*"
 waitress = "*"
@@ -11,7 +13,7 @@ slackclient = "*"
 typing-extensions = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
 
-[dev-packages]
+[tool.poetry.dev-dependencies]
 redis = "*"
 codecov = "*"
 coverage = "*"
@@ -24,3 +26,7 @@ pytest = "*"
 pytest-mypy = "*"
 mypy = "*"
 typing-extensions = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
