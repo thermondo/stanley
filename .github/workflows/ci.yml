@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: poetry install --no-interaction --no-root
 
+      - name: run linters
+        uses: pre-commit/action@v2.0.2
+
       - name: tests
         run: poetry run coverage run --source=stanley -m 'pytest' --mypy
 
