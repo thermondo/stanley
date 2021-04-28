@@ -67,10 +67,10 @@ def slack_api_call_mock(monkeypatch):
         return {
             'ok': True,
             'members': [
-                {'id': 'USLACKBOT', 'name': 'slackbot'},
-                {'id': 'UANA', 'name': 'ana.gomes'},
-                {'id': 'UAMUREKI', 'name': 'amureki'},
-                {'id': 'USEBASTIAN', 'name': 'sebastiankapunkt'},
+                {'id': 'U03H6N5JZ', 'name': 'anne'},
+                {'id': 'U01FECGP57X', 'name': 'ayyoub.maknassa'},
+                {'id': 'U0PES7Z6J', 'name': 'amureki'},
+                {'id': 'U029MJK62', 'name': 'syphar'},
             ]
         }
     monkeypatch.setattr(slack_client, 'api_call', fake_api_call)
@@ -78,5 +78,5 @@ def slack_api_call_mock(monkeypatch):
 
 @pytest.fixture
 def slack_post_message_mock():
-    with patch('stanley.slack.slack.WebClient.chat_postMessage') as mock:
+    with patch('stanley.slack.slack_client.chat_postMessage') as mock:
         yield mock

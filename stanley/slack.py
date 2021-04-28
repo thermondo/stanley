@@ -1,11 +1,12 @@
 from asyncio import Future
 from typing import List, Union
 
-import slack
-from slack.web.slack_response import SlackResponse
+from slack_sdk import WebClient
+from slack_sdk.web.slack_response import SlackResponse
+
 from stanley.settings import SLACK_API_TOKEN
 
-slack_client = slack.WebClient(SLACK_API_TOKEN, timeout=30)
+slack_client = WebClient(SLACK_API_TOKEN, timeout=30)
 
 
 def get_team_members() -> List[tuple]:
