@@ -9,9 +9,9 @@ python = "3.9.4"
 redis = "*"
 flask = "*"
 waitress = "*"
-slackclient = "*"
 typing-extensions = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
+slack-sdk = "^3.5.0"
 
 [tool.poetry.dev-dependencies]
 redis = "*"
