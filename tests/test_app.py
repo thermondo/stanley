@@ -8,10 +8,10 @@ def test_team_command(slack_api_call_mock):
     result = runner.invoke(team_command)
 
     assert result.exit_code == 0
-    assert "('USLACKBOT', 'slackbot')" in result.output
-    assert "('UANA', 'ana.gomes')" in result.output
-    assert "('UAMUREKI', 'amureki')" in result.output
-    assert "('USEBASTIAN', 'sebastiankapunkt')" in result.output
+    assert "('U03H6N5JZ', 'anne')" in result.output
+    assert "('U01FECGP57X', 'ayyoub.maknassa')" in result.output
+    assert "('U0PES7Z6J', 'amureki')" in result.output
+    assert "('U029MJK62', 'syphar')" in result.output
 
 
 def test_send_slack_message(slack_api_call_mock):

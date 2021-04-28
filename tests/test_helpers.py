@@ -101,7 +101,7 @@ def test_get_all_members_if_feedback_members_not_set(slack_api_call_mock):
 def test_filter_according_to_feedback_members_variable(slack_api_call_mock):
     import stanley
     original_value = stanley.helpers.FEEDBACK_MEMBERS
-    stanley.helpers.FEEDBACK_MEMBERS = 'ana.gomes,slackbot'
+    stanley.helpers.FEEDBACK_MEMBERS = 'anne,ayyoub.maknassa'
 
     filtered_members = get_filtered_member()
 
