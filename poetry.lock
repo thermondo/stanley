@@ -150,14 +150,6 @@ python-versions = ">=3.6.1"
 license = ["editdistance-s"]
 
 [[package]]
-name = "idna"
-version = "3.1"
-description = "Internationalized Domain Names in Applications (IDNA)"
-category = "dev"
-optional = false
-python-versions = ">=3.4"
-
-[[package]]
 name = "iniconfig"
 version = "1.1.1"
 description = "iniconfig: brain-dead simple config-ini parsing"
@@ -450,14 +442,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "slack-sdk"
-version = "3.5.0"
+version = "3.5.1"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
 python-versions = ">=3.6.0"
 
 [package.extras]
-optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=8,<9)", "websocket-client (>=0.57)"]
+optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=8,<9)", "websocket-client (>=0.57,<1)"]
 testing = ["pytest (>=5.4,<6)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=3,<4)", "black (==20.8b1)", "psutil (>=5,<6)", "databases (>=0.3)"]
 
 [[package]]
@@ -558,7 +550,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.4"
-content-hash = "a7edf2a9cec5e045fa1148bf1c09403efb414de5a9ba014fd140fbb81b608152"
+content-hash = "b18402102432ba71cdbe9992a506727ac1df4698a0dd893828c673089734caaf"
 
 [metadata.files]
 appdirs = [
@@ -670,10 +662,6 @@ flask = [
 identify = [
     {file = "identify-2.2.4-py2.py3-none-any.whl", hash = "sha256:ad9f3fa0c2316618dc4d840f627d474ab6de106392a4f00221820200f490f5a8"},
     {file = "identify-2.2.4.tar.gz", hash = "sha256:9bcc312d4e2fa96c7abebcdfb1119563b511b5e3985ac52f60d9116277865b2e"},
-]
-idna = [
-    {file = "idna-3.1-py3-none-any.whl", hash = "sha256:5205d03e7bcbb919cc9c19885f9920d622ca52448306f2377daede5cf3faac16"},
-    {file = "idna-3.1.tar.gz", hash = "sha256:c5b02147e01ea9920e6b0a3f1f7bb833612d507592c837a6c49552768f4054e1"},
 ]
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
@@ -893,8 +881,8 @@ six = [
     {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.5.0-py2.py3-none-any.whl", hash = "sha256:66db2e834e397af4ccb0da9f7ab8aeb6f65a81308e32a6f59e7eafef23f4dbeb"},
-    {file = "slack_sdk-3.5.0.tar.gz", hash = "sha256:b1748fe130f46d9a8595b9260bc9deb25727a272043b1a8240a935e3c759ac38"},
+    {file = "slack_sdk-3.5.1-py2.py3-none-any.whl", hash = "sha256:8ceb46f7989d2ba1694dec8555dbda7f750b9216e453da4ad3e32a498bc9ea9a"},
+    {file = "slack_sdk-3.5.1.tar.gz", hash = "sha256:4d3f9f1a984fe828260010fc66ebcd1aeb63b78e6e47d366a9e7177ccc529e84"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
