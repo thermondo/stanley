@@ -24,7 +24,7 @@ def forward_feedback() -> Tuple[str, int]:
 
     sender = data.get('event').get('user')
     # get receiver from the storage, which is matching sender
-    receiver = str(redis_storage.get(sender))
+    receiver = redis_storage.get(sender)
     if not receiver:
         # Ignore message without a receiver
         return 'OK', 200
