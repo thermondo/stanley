@@ -41,7 +41,7 @@ def forward_feedback() -> Tuple[str, int]:
     #     return 'OK', 200
 
     message = 'Hey :wave: \n We\'ve got a feedback for you: \n {}'.format(text)
-    send_slack_message('{}'.format(receiver), message=message)
+    send_slack_message('@{}'.format(receiver), message=message)
     # delete sent feedback pair from the storage
     redis_storage.delete(sender)
     return 'OK', 200
