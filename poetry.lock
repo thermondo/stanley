@@ -447,15 +447,15 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "slack-sdk"
-version = "3.5.1"
+version = "3.6.0"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
 python-versions = ">=3.6.0"
 
 [package.extras]
-optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=8,<9)", "websocket-client (>=0.57,<1)"]
-testing = ["pytest (>=5.4,<6)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=3,<4)", "black (==20.8b1)", "psutil (>=5,<6)", "databases (>=0.3)"]
+optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=9.1,<10)", "websocket-client (>=0.57,<1)"]
+testing = ["pytest (>=5.4,<6)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=3,<4)", "black (==21.5b1)", "psutil (>=5,<6)", "databases (>=0.3)"]
 
 [[package]]
 name = "snowballstemmer"
@@ -554,7 +554,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.4"
-content-hash = "b18402102432ba71cdbe9992a506727ac1df4698a0dd893828c673089734caaf"
+content-hash = "078c649bde7cf550ca7e100838d251ad4c53c9ac0d7b5570c042a79f61032eff"
 
 [metadata.files]
 appdirs = [
@@ -867,8 +867,8 @@ six = [
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.5.1-py2.py3-none-any.whl", hash = "sha256:8ceb46f7989d2ba1694dec8555dbda7f750b9216e453da4ad3e32a498bc9ea9a"},
-    {file = "slack_sdk-3.5.1.tar.gz", hash = "sha256:4d3f9f1a984fe828260010fc66ebcd1aeb63b78e6e47d366a9e7177ccc529e84"},
+    {file = "slack_sdk-3.6.0-py2.py3-none-any.whl", hash = "sha256:e1b257923a1ef88b8620dd3abff94dc5b3eee16ef37975d101ba9e60123ac3af"},
+    {file = "slack_sdk-3.6.0.tar.gz", hash = "sha256:195f044e02a2844579a7a26818ce323e85dde8de224730c859644918d793399e"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.1.0-py2.py3-none-any.whl", hash = "sha256:b51b447bea85f9968c13b650126a888aabd4cb4463fca868ec596826325dedc2"},
