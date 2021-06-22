@@ -26,7 +26,7 @@ pytest = "*"
 pytest-mypy = "*"
 mypy = "*"
 typing-extensions = "*"
-types-redis = "^3.5.3"
+types-redis = "^3.5.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
