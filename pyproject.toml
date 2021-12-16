@@ -11,7 +11,7 @@ flask = "*"
 waitress = "*"
 typing-extensions = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
-slack-sdk = "^3.12.0"
+slack-sdk = "^3.13.0"
 
 [tool.poetry.dev-dependencies]
 redis = "*"
