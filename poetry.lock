@@ -414,7 +414,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xm
 
 [[package]]
 name = "pytest-mypy"
-version = "0.8.1"
+version = "0.9.0"
 description = "Mypy static type checker plugin for Pytest"
 category = "dev"
 optional = false
@@ -424,7 +424,7 @@ python-versions = ">=3.5"
 attrs = ">=19.0"
 filelock = ">=3.0"
 mypy = {version = ">=0.780", markers = "python_version >= \"3.9\""}
-pytest = ">=3.5"
+pytest = {version = ">=4.6", markers = "python_version >= \"3.5\" and python_version < \"3.10\""}
 
 [[package]]
 name = "pyyaml"
@@ -939,8 +939,8 @@ pytest = [
     {file = "pytest-6.2.5.tar.gz", hash = "sha256:131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89"},
 ]
 pytest-mypy = [
-    {file = "pytest-mypy-0.8.1.tar.gz", hash = "sha256:1fa55723a4bf1d054fcba1c3bd694215a2a65cc95ab10164f5808afd893f3b11"},
-    {file = "pytest_mypy-0.8.1-py3-none-any.whl", hash = "sha256:6e68e8eb7ceeb7d1c83a1590912f784879f037b51adfb9c17b95c6b2fc57466b"},
+    {file = "pytest-mypy-0.9.0.tar.gz", hash = "sha256:4f2a08d4ff34737eb6ad6402df1e424f43c9213181b32d675e4e3cafbda67bbd"},
+    {file = "pytest_mypy-0.9.0-py3-none-any.whl", hash = "sha256:f8b5c6be405c8605959d1c79f20dcdeb2b3667fce8f264ff32bc854e5249f161"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
