@@ -510,7 +510,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "slack-sdk"
-version = "3.15.1"
+version = "3.15.2"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
@@ -625,7 +625,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.4"
-content-hash = "7657c58171eef8f7c96263fcb1e5c09f7aff583bd03b68c672f8c0549487d765"
+content-hash = "cdd4e2aaddf6d33f4ddc832e5a762a9413d21b72b2a6d26245c5be16cac9eae4"
 
 [metadata.files]
 astroid = [
@@ -962,8 +962,8 @@ six = [
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.15.1-py2.py3-none-any.whl", hash = "sha256:149f11bdf1eddc446a2327acc28d77bd6d0c54a9f4b6c1433dec422f2cc1c940"},
-    {file = "slack_sdk-3.15.1.tar.gz", hash = "sha256:8fe074124254e16172bec679421a8dd587320b3221a36a61ff9e350cbe9f9add"},
+    {file = "slack_sdk-3.15.2-py2.py3-none-any.whl", hash = "sha256:e1fa26786169176e707676decc287fd9d3d547bbc43c0a1a4f99eb373b07da94"},
+    {file = "slack_sdk-3.15.2.tar.gz", hash = "sha256:128f3bb0b5b91454a3d5f140a61f3db370a0e1b50ffe0a8d9e9ebe0e894faed7"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.2.0-py2.py3-none-any.whl", hash = "sha256:c8e1716e83cc398ae16824e5572ae04e0d9fc2c6b985fb0f900f5f0c96ecba1a"},
