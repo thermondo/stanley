@@ -7,7 +7,7 @@ from stanley.helpers import request_feedback
 from stanley.settings import SENTRY_DSN
 from stanley.slack import get_team_members
 
-sentry_sdk.init(
+sentry_sdk.init(  # type: ignore
     dsn=SENTRY_DSN,
     integrations=[FlaskIntegration()]
 )
