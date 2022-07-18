@@ -598,7 +598,7 @@ python-versions = ">=3.6,<4.0"
 
 [[package]]
 name = "types-redis"
-version = "4.3.3"
+version = "4.3.4"
 description = "Typing stubs for redis"
 category = "dev"
 optional = false
@@ -689,7 +689,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.4"
-content-hash = "0a7a09628e8d81c5a64b4612fbdc1dcfc936863d3a0a44a4c6f36e3f7160023d"
+content-hash = "141ede8b5585225215183b9e84975e69671ca70b5b690c765dc64804bb6203ca"
 
 [metadata.files]
 astroid = [
@@ -1061,8 +1061,8 @@ tomlkit = [
     {file = "tomlkit-0.11.1.tar.gz", hash = "sha256:61901f81ff4017951119cd0d1ed9b7af31c821d6845c8c477587bbdcd5e5854e"},
 ]
 types-redis = [
-    {file = "types-redis-4.3.3.tar.gz", hash = "sha256:d3ae29aff7999361c9f979498bd2e257f932f6291b876aac0b44b5f00106c6e1"},
-    {file = "types_redis-4.3.3-py3-none-any.whl", hash = "sha256:7d37d9c2ab6a52c9f2a3ceaac41c4033f1a14b59cbdd01717b29a5fbe16600fb"},
+    {file = "types-redis-4.3.4.tar.gz", hash = "sha256:d0b9143de8ae0d6e3699f246f54b3b2204be593632fc0d49ca2940867c3e2591"},
+    {file = "types_redis-4.3.4-py3-none-any.whl", hash = "sha256:f84dfe570ac729fb51735357f807a9e59b4732ddd7050708a7a7e32782b91047"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},
