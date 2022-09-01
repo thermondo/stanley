@@ -1,12 +1,16 @@
 version: 2
 updates:
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "04:30"
-  open-pull-requests-limit: 20
-  allow:
-  - dependency-type: direct
-  - dependency-type: indirect
-  rebase-strategy: auto
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:30"
+    open-pull-requests-limit: 20
+    allow:
+      - dependency-type: direct
+      - dependency-type: indirect
+    rebase-strategy: auto
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
