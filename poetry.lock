@@ -551,7 +551,7 @@ tornado = ["tornado (>=5)"]
 
 [[package]]
 name = "slack-sdk"
-version = "3.18.1"
+version = "3.18.2"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
@@ -559,7 +559,7 @@ python-versions = ">=3.6.0"
 
 [package.extras]
 optional = ["SQLAlchemy (>=1,<2)", "aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "websocket-client (>=1,<2)", "websockets (>=10,<11)"]
-testing = ["Flask (>=1,<2)", "Flask-Sockets (>=0.2,<1)", "Jinja2 (==3.0.3)", "Werkzeug (<2)", "black (==22.3.0)", "boto3 (<=2)", "click (==8.0.4)", "codecov (>=2,<3)", "databases (>=0.5)", "flake8 (>=4,<5)", "itsdangerous (==1.1.0)", "moto (>=3,<4)", "psutil (>=5,<6)", "pytest (>=6.2.5,<7)", "pytest-asyncio (<1)", "pytest-cov (>=2,<3)"]
+testing = ["Flask (>=1,<2)", "Flask-Sockets (>=0.2,<1)", "Jinja2 (==3.0.3)", "Werkzeug (<2)", "black (==22.8.0)", "boto3 (<=2)", "click (==8.0.4)", "codecov (>=2,<3)", "databases (>=0.5)", "flake8 (>=5,<6)", "itsdangerous (==1.1.0)", "moto (>=3,<4)", "psutil (>=5,<6)", "pytest (>=6.2.5,<7)", "pytest-asyncio (<1)", "pytest-cov (>=2,<3)"]
 
 [[package]]
 name = "snowballstemmer"
@@ -688,7 +688,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.4"
-content-hash = "4f7562496899ea207fcd6c38f4aab2d8b43312aa4f5a5b0b57ed3541148c4bbf"
+content-hash = "8fed5b2e52287384e06096a4e7401a48fd4683a583b3ba274f3b6301fe4ad530"
 
 [metadata.files]
 astroid = [
@@ -1045,8 +1045,8 @@ sentry-sdk = [
     {file = "sentry_sdk-1.9.5-py2.py3-none-any.whl", hash = "sha256:b4b41f90951ed83e7b4c176eef021b19ecba39da5b73aca106c97a9b7e279a90"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.18.1-py2.py3-none-any.whl", hash = "sha256:63ce5e6253a31873d6c921c9feaa842a93a2f56e6e009cb7daf406f4bc4df798"},
-    {file = "slack_sdk-3.18.1.tar.gz", hash = "sha256:a25d3d2bf0bf605d54d764d4a463fe7c0659ee24c13d75653e2bec247bd5998b"},
+    {file = "slack_sdk-3.18.2-py2.py3-none-any.whl", hash = "sha256:d895fa191f2288d74cbbf20055be2f39c54397b3288c766fcd31e3f5828ef937"},
+    {file = "slack_sdk-3.18.2.tar.gz", hash = "sha256:69befeadfbfc9238e85d0641c864cd12bfb162fbdf3e8f9eef30180f171ea675"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.2.0-py2.py3-none-any.whl", hash = "sha256:c8e1716e83cc398ae16824e5572ae04e0d9fc2c6b985fb0f900f5f0c96ecba1a"},
