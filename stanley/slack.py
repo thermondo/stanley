@@ -11,8 +11,11 @@ slack_client = WebClient(SLACK_API_TOKEN, timeout=30)
 
 def get_team_members() -> List[tuple]:
     """Return user list in format (USER_ID, USER_NAME)."""
-    members = slack_client.api_call('users.list').get('members')  # type: ignore
-    return [(member.get('id'), member.get('name')) for member in members]
+    members = slack_client.api_call('users.list').get('members')
+    if members:
+        return [(member.get('id'), member.get('name')) for member in members]
+    else:
+        return []
 
 
 def send_slack_message(channel: str, message: str) -> Union[Future, SlackResponse]:
