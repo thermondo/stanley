@@ -541,7 +541,7 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "slack-sdk"
-version = "3.19.3"
+version = "3.19.4"
 description = "The Slack API Platform SDK for Python"
 category = "main"
 optional = false
@@ -666,7 +666,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.6"
-content-hash = "91e0638ab00afab62a14a10de373aa00a1050969791c48980c2fa373e871a09d"
+content-hash = "8c3ab04da3dbf06517bd3c81ed132d28c71cd13921fa5c401a99a1efe48e38ca"
 
 [metadata.files]
 astroid = [
@@ -1015,8 +1015,8 @@ setuptools = [
     {file = "setuptools-65.5.1.tar.gz", hash = "sha256:e197a19aa8ec9722928f2206f8de752def0e4c9fc6953527360d1c36d94ddb2f"},
 ]
 slack-sdk = [
-    {file = "slack_sdk-3.19.3-py2.py3-none-any.whl", hash = "sha256:316574ffaf0f5c55bd08476b0a34f3bd2caa9b90b814859bc22922f25934d3aa"},
-    {file = "slack_sdk-3.19.3.tar.gz", hash = "sha256:88ddf46f42f95568cffbab8c69de7e7bfacce9b13829d9214a8aee2b70b0a4b7"},
+    {file = "slack_sdk-3.19.4-py2.py3-none-any.whl", hash = "sha256:71e222f5a55d2f704638602f0883def9d331539462edc6d9cb88f83044fbce70"},
+    {file = "slack_sdk-3.19.4.tar.gz", hash = "sha256:67b05e636fee6e2cb2ed140fc79cb1cd370a7a983ec6e60fdebaf83e48a53383"},
 ]
 snowballstemmer = [
     {file = "snowballstemmer-2.2.0-py2.py3-none-any.whl", hash = "sha256:c8e1716e83cc398ae16824e5572ae04e0d9fc2c6b985fb0f900f5f0c96ecba1a"},
