@@ -1085,14 +1085,14 @@ files = [
 
 [[package]]
 name = "types-pyopenssl"
-version = "23.1.0.0"
+version = "23.1.0.1"
 description = "Typing stubs for pyOpenSSL"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-pyOpenSSL-23.1.0.0.tar.gz", hash = "sha256:acc153718bff497e8f6ca3beecb5ea7a3087c796e40d569fded8bafbfca73605"},
-    {file = "types_pyOpenSSL-23.1.0.0-py3-none-any.whl", hash = "sha256:9dacec020a3484ef5e4ea4bd9d403a981765b80821d5a40b790b2ba2f09d58db"},
+    {file = "types-pyOpenSSL-23.1.0.1.tar.gz", hash = "sha256:59044283c475eaa5a29b36a903c123d52bdf4a7e012f0a1ca0e41115b99216da"},
+    {file = "types_pyOpenSSL-23.1.0.1-py3-none-any.whl", hash = "sha256:ac7fbc240930c2f9a1cbd2d04f9cb14ad0f15b0ad8d6528732a83747b1b2086e"},
 ]
 
 [package.dependencies]
