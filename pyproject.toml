@@ -7,11 +7,12 @@ authors = []
 [tool.poetry.dependencies]
 python = "~3.11"
 redis = "*"
-flask = "*"
 waitress = "*"
 typing-extensions = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
 slack-sdk = "*"
+fastapi = "^0.68.1"
+uvicorn = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
 redis = "*"
