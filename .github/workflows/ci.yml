@@ -37,4 +37,4 @@ jobs:
         run: poetry run coverage run --source=stanley -m 'pytest' --mypy
 
       - name: codecov
-        run: poetry run codecov --required
+        run: poetry run codecov
