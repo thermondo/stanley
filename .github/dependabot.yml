@@ -6,6 +6,8 @@ updates:
       interval: weekly
       day: "monday"
       time: "06:00"
+    reviewers:
+      - "thermondo/platform"
     open-pull-requests-limit: 20
     allow:
       - dependency-type: direct
