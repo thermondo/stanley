@@ -8,7 +8,7 @@ authors = []
 python = "~3.11"
 redis = "*"
 flask = "*"
-waitress = "<3"
+waitress = "<4"
 typing-extensions = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
 slack-sdk = "*"
