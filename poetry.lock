@@ -1048,18 +1048,33 @@ files = [
 ]
 
 [[package]]
+name = "types-cffi"
+version = "1.16.0.20240331"
+description = "Typing stubs for cffi"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-cffi-1.16.0.20240331.tar.gz", hash = "sha256:b8b20d23a2b89cfed5f8c5bc53b0cb8677c3aac6d970dbc771e28b9c698f5dee"},
+    {file = "types_cffi-1.16.0.20240331-py3-none-any.whl", hash = "sha256:a363e5ea54a4eb6a4a105d800685fde596bc318089b025b27dee09849fe41ff0"},
+]
+
+[package.dependencies]
+types-setuptools = "*"
+
+[[package]]
 name = "types-pyopenssl"
-version = "24.0.0.20240130"
+version = "24.1.0.20240722"
 description = "Typing stubs for pyOpenSSL"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "types-pyOpenSSL-24.0.0.20240130.tar.gz", hash = "sha256:c812e5c1c35249f75ef5935708b2a997d62abf9745be222e5f94b9595472ab25"},
-    {file = "types_pyOpenSSL-24.0.0.20240130-py3-none-any.whl", hash = "sha256:24a255458b5b8a7fca8139cf56f2a8ad5a4f1a5f711b73a5bb9cb50dc688fab5"},
+    {file = "types-pyOpenSSL-24.1.0.20240722.tar.gz", hash = "sha256:47913b4678a01d879f503a12044468221ed8576263c1540dcb0484ca21b08c39"},
+    {file = "types_pyOpenSSL-24.1.0.20240722-py3-none-any.whl", hash = "sha256:6a7a5d2ec042537934cfb4c9d4deb0e16c4c6250b09358df1f083682fe6fda54"},
 ]
 
 [package.dependencies]
 cryptography = ">=35.0.0"
+types-cffi = "*"
 
 [[package]]
 name = "types-redis"
@@ -1075,6 +1090,17 @@ files = [
 [package.dependencies]
 cryptography = ">=35.0.0"
 types-pyOpenSSL = "*"
+
+[[package]]
+name = "types-setuptools"
+version = "71.1.0.20240726"
+description = "Typing stubs for setuptools"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-setuptools-71.1.0.20240726.tar.gz", hash = "sha256:85ba28e9461bb1be86ebba4db0f1c2408f2b11115b1966334ea9dc464e29303e"},
+    {file = "types_setuptools-71.1.0.20240726-py3-none-any.whl", hash = "sha256:a7775376f36e0ff09bcad236bf265777590a66b11623e48c20bfc30f1444ea36"},
+]
 
 [[package]]
 name = "typing-extensions"
