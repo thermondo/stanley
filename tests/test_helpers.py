@@ -4,7 +4,7 @@ from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 
 
 def test_get_sender(redis_clean_up, members):
-    assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == set()
+    assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == []
 
     sender = get_sender(members)
 
@@ -100,8 +100,9 @@ def test_get_all_members_if_feedback_members_not_set(slack_api_call_mock):
 
 def test_filter_according_to_feedback_members_variable(slack_api_call_mock):
     import stanley
+
     original_value = stanley.helpers.FEEDBACK_MEMBERS
-    stanley.helpers.FEEDBACK_MEMBERS = 'anne,ayyoub.maknassa'
+    stanley.helpers.FEEDBACK_MEMBERS = "anne,ayyoub.maknassa"
 
     filtered_members = get_filtered_member()
 
