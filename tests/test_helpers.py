@@ -4,7 +4,7 @@ from stanley.settings import REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
 
 
 def test_get_sender(redis_clean_up, members):
-    assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == []
+    assert redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK) == set()
 
     sender = get_sender(members)
 
