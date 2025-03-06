@@ -15,16 +15,7 @@ def two_members():
     sebastian_id = gen_string(9)
     assert amureki_id is not sebastian_id
 
-    members = [
-        [
-            amureki_id,
-            'amureki'
-        ],
-        [
-            sebastian_id,
-            'sebastiankapunkt'
-        ]
-    ]
+    members = [[amureki_id, "amureki"], [sebastian_id, "sebastiankapunkt"]]
 
     return members
 
@@ -37,18 +28,9 @@ def members():
     assert len(set([amureki_id, sebastian_id, anapaulagomes_id])) == 3
 
     members = [
-        [
-            amureki_id,
-            'amureki'
-        ],
-        [
-            sebastian_id,
-            'sebastiankapunkt'
-        ],
-        [
-            anapaulagomes_id,
-            'anapaulagomes'
-        ]
+        [amureki_id, "amureki"],
+        [sebastian_id, "sebastiankapunkt"],
+        [anapaulagomes_id, "anapaulagomes"],
     ]
 
     return members
@@ -65,18 +47,19 @@ def redis_clean_up():
 def slack_api_call_mock(monkeypatch):
     def fake_api_call(endpoint):
         return {
-            'ok': True,
-            'members': [
-                {'id': 'U03H6N5JZ', 'name': 'anne'},
-                {'id': 'U01FECGP57X', 'name': 'ayyoub.maknassa'},
-                {'id': 'U0PES7Z6J', 'name': 'amureki'},
-                {'id': 'U029MJK62', 'name': 'syphar'},
-            ]
+            "ok": True,
+            "members": [
+                {"id": "U03H6N5JZ", "name": "anne"},
+                {"id": "U01FECGP57X", "name": "ayyoub.maknassa"},
+                {"id": "U0PES7Z6J", "name": "amureki"},
+                {"id": "U029MJK62", "name": "syphar"},
+            ],
         }
-    monkeypatch.setattr(slack_client, 'api_call', fake_api_call)
+
+    monkeypatch.setattr(slack_client, "api_call", fake_api_call)
 
 
 @pytest.fixture
 def slack_post_message_mock():
-    with patch('stanley.slack.slack_client.chat_postMessage') as mock:
+    with patch("stanley.slack.slack_client.chat_postMessage") as mock:
         yield mock

@@ -17,7 +17,7 @@ def test_team_command(slack_api_call_mock):
 def test_send_slack_message(slack_api_call_mock):
     runner = app.test_cli_runner()
 
-    with patch('stanley.app.request_feedback') as request_feedback_mock:
+    with patch("stanley.app.request_feedback") as request_feedback_mock:
         result = runner.invoke(request_feedback_command)
 
     assert result.exit_code == 0

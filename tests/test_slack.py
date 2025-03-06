@@ -11,8 +11,8 @@ def test_get_team_members(slack_api_call_mock):
 
 
 def test_send_slack_message(slack_post_message_mock):
-    channel = 'random'
-    message = 'I am a test and I know it'
+    channel = "random"
+    message = "I am a test and I know it"
     expected_call = call(as_user=True, channel=channel, text=message)
 
     send_slack_message(channel, message)

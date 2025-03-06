@@ -1,10 +1,13 @@
 import secrets
-from typing import List, Tuple
 
 from sentry_sdk import capture_message
 
 from stanley.redis import redis_storage
-from stanley.settings import FEEDBACK_MEMBERS, REDIS_KEY_RECEIVE_FEEDBACK, REDIS_KEY_SEND_FEEDBACK
+from stanley.settings import (
+    FEEDBACK_MEMBERS,
+    REDIS_KEY_RECEIVE_FEEDBACK,
+    REDIS_KEY_SEND_FEEDBACK,
+)
 from stanley.slack import get_team_members, send_slack_message
 
 
@@ -14,17 +17,17 @@ def request_feedback() -> None:
     sender = get_sender(members)
     receiver = get_receiver(members, sender)
 
-    message = "Hey, tell me something nice about @{}".format(receiver[1])
-    response = send_slack_message(channel="@{}".format(sender[0]), message=message)
+    message = f"Hey, tell me something nice about @{receiver[1]}"
+    response = send_slack_message(channel=f"@{sender[0]}", message=message)
 
-    if response["ok"]:  # type: ignore
+    if response["ok"]:  # type: ignore[index]
         # set sender, receiver pair in the storage
         redis_storage.set(sender[0], receiver[0])
     else:
-        capture_message("Couldn't send slack message. Response: {}".format(response))
+        capture_message(f"Couldn't send slack message. Response: {response}")
 
 
-def get_filtered_member() -> List[tuple]:
+def get_filtered_member() -> list[tuple]:
     members = get_team_members()
     if FEEDBACK_MEMBERS:
         # if we have variable set, ignore other people
@@ -32,7 +35,7 @@ def get_filtered_member() -> List[tuple]:
     return members
 
 
-def get_sender(members: List[tuple]) -> Tuple:
+def get_sender(members: list[tuple]) -> tuple:
     # list of user that send a feedback already
     sent_already = redis_storage.smembers(REDIS_KEY_SEND_FEEDBACK)
 
@@ -52,7 +55,7 @@ def get_sender(members: List[tuple]) -> Tuple:
     return random_sender
 
 
-def get_receiver(members: List[tuple], sender: Tuple) -> Tuple:
+def get_receiver(members: list[tuple], sender: tuple) -> tuple:
     # subtract the list of people that already have received a feedback and
     # also remove the person that is the sender
     received_already = redis_storage.smembers(REDIS_KEY_RECEIVE_FEEDBACK)
@@ -60,7 +63,8 @@ def get_receiver(members: List[tuple], sender: Tuple) -> Tuple:
         m for m in members if m[0] not in received_already and m is not sender
     ]
 
-    # if the size of the list is zero, everyone received a feedback and we can start again
+    # if the size of the list is zero, everyone received a feedback and we can start
+    # again
     if len(can_receive) == 0:
         # FIXME the last person will never get a feedback from this round
         redis_storage.delete(REDIS_KEY_RECEIVE_FEEDBACK)

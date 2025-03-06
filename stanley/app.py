@@ -7,15 +7,11 @@ from stanley.helpers import request_feedback
 from stanley.settings import SENTRY_DSN
 from stanley.slack import get_team_members
 
-sentry_sdk.init(  # type: ignore
-    dsn=SENTRY_DSN,
-    integrations=[FlaskIntegration()]
-)
+sentry_sdk.init(dsn=SENTRY_DSN, integrations=[FlaskIntegration()])
 
 app = Flask(__name__)
 
-import stanley.routes  # NoQA # isort:skip # pylint: disable=unused-import
-assert stanley.routes  # nosec
+import stanley.routes  # noqa: E402, F401
 
 
 @app.cli.command()
