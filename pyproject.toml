@@ -10,7 +10,6 @@ flask = "*"
 redis = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
 slack-sdk = "*"
-typing-extensions = "*"
 waitress = "<4"
 
 [tool.poetry.group.dev.dependencies]
@@ -19,7 +18,6 @@ pre-commit = "*"
 pytest = "*"
 ruff = "*"
 types-redis = "*"
-typing-extensions = "*"
 
 [tool.ruff]
 line-length = 88
