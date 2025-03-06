@@ -45,7 +45,7 @@ ignore = ["D1", "D203", "D205", "D212"]
 "tests/*" = ["S", "D"]
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 ignore_missing_imports = true
 plugins = ["mypy_django_plugin.main"]
 
