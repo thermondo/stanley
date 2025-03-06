@@ -5,28 +5,72 @@ description = ""
 authors = []
 
 [tool.poetry.dependencies]
-python = "~3.11"
-redis = "*"
+python = "~3.13"
 flask = "*"
-waitress = "<4"
-typing-extensions = "*"
+redis = "*"
 sentry-sdk = {extras = ["flask"], version = "*"}
 slack-sdk = "*"
-
-[tool.poetry.dev-dependencies]
-redis = "*"
-codecov = "*"
-coverage = "*"
-pre-commit = "*"
-pycodestyle = "*"
-pydocstyle = "*"
-isort = "*"
-pylint = "*"
-pytest = "*"
-pytest-mypy = "*"
-mypy = "*"
 typing-extensions = "*"
+waitress = "<4"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "*"
+pre-commit = "*"
+pytest = "*"
+ruff = "*"
 types-redis = "*"
+typing-extensions = "*"
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.format]
+
+[tool.ruff.lint]
+unfixable = ["F841", "F401"]
+select = [
+  "D",  # pydocstyle
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+  "PGH", # pygrep-hooks
+  "S",  # bandit
+  "UP", # pyupgrade
+  "W",  # pycodestyle
+]
+ignore = ["D1", "D203", "D205", "D212"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "D"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+plugins = ["mypy_django_plugin.main"]
+
+# definition of `mypy --strict`, can be fetched via `mypy --help`
+warn_unused_configs = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+strict_equality = true
+extra_checks = true
+
+[[tool.mypy.overrides]]
+module = ["*.migrations.*", "conftest", "*.tests.*", "*.baker_recipes"]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+addopts = "--tb=short -rxs"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

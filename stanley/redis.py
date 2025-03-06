@@ -9,7 +9,7 @@ if "rediss://" in REDIS_URL:
 else:
     kwargs = dict()
 
-redis_storage = redis.from_url(  # type: ignore
+redis_storage = redis.from_url(  # type: ignore[call-overload]
     url=REDIS_URL,
     decode_responses=True,
     **kwargs,
