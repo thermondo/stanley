@@ -763,14 +763,14 @@ optional = ["SQLAlchemy (>=1.4,<3)", "aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "b
 
 [[package]]
 name = "types-cffi"
-version = "1.17.0.20250326"
+version = "1.17.0.20250516"
 description = "Typing stubs for cffi"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "types_cffi-1.17.0.20250326-py3-none-any.whl", hash = "sha256:5af4ecd7374ae0d5fa9e80864e8d4b31088cc32c51c544e3af7ed5b5ed681447"},
-    {file = "types_cffi-1.17.0.20250326.tar.gz", hash = "sha256:6c8fea2c2f34b55e5fb77b1184c8ad849d57cf0ddccbc67a62121ac4b8b32254"},
+    {file = "types_cffi-1.17.0.20250516-py3-none-any.whl", hash = "sha256:b5a7b61fa60114072900a1f25094d0ea3d4f398d060128583ef644bb686d027d"},
+    {file = "types_cffi-1.17.0.20250516.tar.gz", hash = "sha256:f63c42ab07fd71f4ed218e2dea64f8714e71c585db5c6bdef9ea8f57cf99979b"},
 ]
 
 [package.dependencies]
